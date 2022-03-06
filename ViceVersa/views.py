@@ -6,6 +6,8 @@ def index(request):
 
 
 def reverse(request):
-    user_text = request.GET['usertext']
+    user_text = request.GET['user_text']
     reversed_text = user_text[::-1]
-    return render(request, 'reverse.html', {'user_text': user_text, 'user_reversed_text': reversed_text})
+    length_of_string = len(user_text.split())
+    return render(request, 'reverse.html', {'user_text': user_text, 'user_reversed_text': reversed_text,
+                                            'input_length': length_of_string})
